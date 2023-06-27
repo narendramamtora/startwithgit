@@ -34,11 +34,29 @@
 
 
 //GETELEMENTBYTAGNAME
-var ite=document.getElementsByTagName('li');
-console.log(ite)
-console.log(ite[1])
-ite[1].textContent='Hello 2 '
-ite[2].style.backgroundColor='green'
-for(var i=0;i<ite.length;i++){
-    ite[i].style.fontWeight="bold"
+// var ite=document.getElementsByTagName('li');
+// console.log(ite)
+// console.log(ite[1])
+// ite[1].textContent='Hello 2 '
+// ite[2].style.backgroundColor='green'
+// for(var i=0;i<ite.length;i++){
+//     ite[i].style.fontWeight="bold"
+// }
+
+
+// QuerySelector
+// var secondItem=document.querySelector('.list-group-item:nth-child(2)')
+// secondItem.style.background="green"
+
+// var thirdItem=document.querySelector('.list-group-item:nth-child(3)')
+// thirdItem.style.visibility="hidden"
+
+
+// QuerySelectorALL
+var secondSItem=document.querySelectorAll('.list-group-item')
+secondSItem[1].style.color="green"
+
+var odd = document.querySelectorAll('li:nth-child(odd');
+for(var i=0;i<odd.length;i++){
+odd[i].style.background="green"
 }
