@@ -53,10 +53,86 @@
 
 
 // QuerySelectorALL
-var secondSItem=document.querySelectorAll('.list-group-item')
-secondSItem[1].style.color="green"
+// var secondSItem=document.querySelectorAll('.list-group-item')
+// secondSItem[1].style.color="green"
 
-var odd = document.querySelectorAll('li:nth-child(odd');
-for(var i=0;i<odd.length;i++){
-odd[i].style.background="green"
-}
+// var odd = document.querySelectorAll('li:nth-child(odd');
+// for(var i=0;i<odd.length;i++){
+// odd[i].style.background="green"
+// }
+
+
+// TRAVERING THE DOM
+// var itemList= document.querySelector('#items');
+//parentElement
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.background='grey';
+// console.log(itemList.parentElement.parentElement.parentElement)
+
+//childrennodes
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.background='yellow';
+
+//firstChild
+// console.log(itemList.firstChild);
+ 
+//firstelementChild
+// console.log(itemList.firstElementChild);                             
+// itemList.firstElementChild.textContent='Hello 1'
+
+//lastChild
+// console.log(itemList.lastChild);
+ 
+//lastelementChild
+// console.log(itemList.lastElementChild);                             
+// itemList.lastElementChild.textContent='Hello 4'
+
+//nextSibling
+// console.log(itemList.nextSibling);
+//nextElementSibling
+// console.log(itemList.nextElementSibling);
+
+//previousSibling
+// console.log(itemList.previousSibling);
+
+//previousElementSibling
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color='green'
+
+ //createElement
+ //Create div
+ var divv=document.createElement('div');
+var divvv=document.createElement('div');
+ //add class
+ divv.className='hello'
+ divvv.className='hi'
+ // add id
+ divv.id='hello1'
+ divvv.id='hi'
+ //add attr
+ divv.setAttribute('title','hello Div');
+ divvv.setAttribute('title','hi Div');
+ //createtextnode
+ var divvText=document.createTextNode('HEllo word')
+ var divvvText=document.createTextNode('HEllo')
+
+ //Add tect to Div
+ divv.appendChild(divvText)
+ divvv.appendChild(divvvText)
+
+
+var conta=document.querySelector('header .container');
+var h1=document.querySelector('header h1')
+
+var con=document.getElementById('items')
+
+
+// var list=document.querySelector('h2  .list');
+// var h2=document.querySelector('ul li')
+ 
+// console.log(divvv)
+// console.log(divv)
+
+conta.insertBefore(divv, h1);
+con.insertBefore(divvv, con.childNodes[0]);
