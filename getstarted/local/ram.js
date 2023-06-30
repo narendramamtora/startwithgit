@@ -24,28 +24,32 @@ myForm.addEventListener('submit', onsubmit);//if not working try onsubmit
 
 //delete event
 userList.addEventListener('click', removeItem)
-userList.addEventListener('click', deletelocal)
+userList.addEventListener('click', editItem)
 
-//delete from localstorage
 //Add item
 function onsubmit(e){
     e.preventDefault();
 
     const li=document.createElement('li');
     li.id=emailInput.value   
+    li.name=nameInput.value
+    li.num=number.value
+    
+    
     li.appendChild(document.createTextNode(`${nameInput.value} - ${emailInput.value} - ${number.value}`));    
+   
     // Create del button element
   var deleteBtn = document.createElement('button');
-
+  var editBtn = document.createElement('button');
    // Add classes to del button
    deleteBtn.className = 'btnbtnbtn';
- 
+   editBtn.className = 'btnedit';
    // Append text node
    deleteBtn.appendChild(document.createTextNode('delete'));
-
+   editBtn.appendChild(document.createTextNode('edit'));
   // Append button to li
    li.appendChild(deleteBtn);  
-
+   li.appendChild(editBtn);
    userList.appendChild(li);   
     }
 
@@ -56,5 +60,21 @@ function removeItem(e){
         userList.removeChild(li) 
         const key  = li.id;
         localStorage.removeItem(key);
+    }
+}
+
+    function editItem(e){
+    if(e.target.classList.contains('btnedit')){
+        var li=e.target.parentElement;
+        userList.removeChild(li) 
+        const key  = li.id;
+        const n=li.num;
+        const na=li.name;
+        localStorage.removeItem(key);
+    
+        //update
+        nameInput.value=na;
+        emailInput.value=key;
+        number.value=n;
     }
 }
